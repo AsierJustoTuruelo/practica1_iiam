@@ -15,6 +15,14 @@ def mover_raton_aleatorio():
     # Mover el ratón de forma suave a esas coordenadas
     pyautogui.moveTo(destino_x, destino_y, duration=random.uniform(0.5, 1.5))  # Movimiento suave
 
+# Función para realizar un clic simple en la posición actual del ratón
+def hacer_click_simple():
+    pyautogui.click()
+
+# Función para realizar un doble clic en la posición actual del ratón
+def hacer_doble_click():
+    pyautogui.doubleClick()
+
 # Función para detectar y cerrar el popup "Pafish RTT Window"
 def cerrar_popup_pafish():
     # Buscar todas las ventanas abiertas
@@ -30,11 +38,20 @@ def cerrar_popup_pafish():
             except Exception as e:
                 print(f"No se pudo cerrar la ventana {ventana.title}: {e}")
 
-# Función principal para simular el comportamiento
+# Función para simular las acciones
 def ejecutar_simulacion():
     while True:
         # Mover el ratón de manera aleatoria
         mover_raton_aleatorio()
+
+        # Realizar un clic simple en la posición actual
+        hacer_click_simple()
+
+        # Esperar un momento antes de realizar el siguiente clic
+        time.sleep(random.uniform(1, 2))
+
+        # Realizar un doble clic en la posición actual
+        hacer_doble_click()
 
         # Verificar y cerrar el popup "Pafish RTT Window"
         cerrar_popup_pafish()
