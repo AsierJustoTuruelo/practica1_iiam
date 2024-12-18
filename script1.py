@@ -31,7 +31,7 @@ def cerrar_popup_pafish():
     # Iterar sobre las ventanas abiertas
     for ventana in ventanas_abiertas:
         # Comprobar si el título de la ventana es "Pafish RTT Window"
-        if 'Pafish RTT Window' in ventana.title:
+        if 'Pafish RTT window' in ventana.title:
             try:
                 ventana.close()  # Cerrar la ventana si es el popup de Pafish
                 print("Popup 'Pafish RTT Window' cerrado.")
@@ -48,7 +48,7 @@ def ejecutar_simulacion():
         hacer_click_simple()
 
         # Esperar un momento antes de realizar el siguiente clic
-        time.sleep(random.uniform(1, 2))
+        time.sleep(random.uniform(1, 1.5))
 
         # Realizar un doble clic en la posición actual
         hacer_doble_click()
